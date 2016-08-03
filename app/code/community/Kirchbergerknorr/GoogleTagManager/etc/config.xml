@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Kirchbergerknorr GoogleTagManager Config
+ *
+ * @category    Kirchbergerknorr
+ * @package     Kirchbergerknorr_GoogleTagManager
+ * @author      Benedikt Volkmer <bv@kirchbergerknorr.de>
+ * @copyright   Copyright (c) 2016 kirchbergerknorr GmbH (http://www.kirchbergerknorr.de)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Kirchbergerknorr_GoogleTagManager>
+            <version>0.1.0</version>
+        </Kirchbergerknorr_GoogleTagManager>
+    </modules>
+    <frontend>
+        <events>
+            <controller_action_layout_generate_xml_before>
+                <observers>
+                    <kk_controller_predispatch_observer>
+                        <type>singleton</type>
+                        <class>Kirchbergerknorr_GoogleTagManager_Model_Observer</class>
+                        <method>updateLayout</method>
+                    </kk_controller_predispatch_observer>
+                </observers>
+            </controller_action_layout_generate_xml_before>
+        </events>
+    </frontend>
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <kirchbergerknorr_googletagmanager>
+                                            <title>Kirchbergerknorr GoogleTagManager</title>
+                                        </kirchbergerknorr_googletagmanager>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <global>
+        <models>
+            <kirchbergerknorr_googletagmanager>
+                <class>Kirchbergerknorr_GoogleTagManager_Model</class>
+            </kirchbergerknorr_googletagmanager>
+        </models>
+        <blocks>
+            <kirchbergerknorr_googletagmanager>
+                <class>Kirchbergerknorr_GoogleTagManager_Block</class>
+            </kirchbergerknorr_googletagmanager>
+        </blocks>
+        <helpers>
+            <kirchbergerknorr_googletagmanager>
+                <class>Kirchbergerknorr_GoogleTagManager_Helper</class>
+            </kirchbergerknorr_googletagmanager>
+        </helpers>
+    </global>
+    <default>
+        <kirchbergerknorr_googletagmanager>
+            <conversion>
+                <path>checkout/onepage/index</path>
+            </conversion>
+            <ecommerce>
+                <path>checkout/onepage/success</path>
+            </ecommerce>
+        </kirchbergerknorr_googletagmanager>
+    </default>
+</config>

@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Kirchbergerknorr GoogleTagManager System Configuration
+ *
+ * @category    Kirchbergerknorr
+ * @package     Kirchbergerknorr_GoogleTagManager
+ * @author      Benedikt Volkmer <bv@kirchbergerknorr.de>
+ * @copyright   Copyright (c) 2016 kirchbergerknorr GmbH (http://www.kirchbergerknorr.de)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <tabs>
+        <kirchbergerknorr translate="label">
+            <label>Kirchbergerknorr</label>
+            <sort_order>0</sort_order>
+        </kirchbergerknorr>
+    </tabs>
+    <sections>
+        <kirchbergerknorr_googletagmanager translate="label">
+            <label>GoogleTagManager</label>
+            <tab>kirchbergerknorr</tab>
+            <frontend_type>text</frontend_type>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            <sort_order>1</sort_order>
+            <groups>
+                <general>
+                    <label>General GoogleTagManager</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>0</sort_order>
+                    <fields>
+                        <active translate="label">
+                            <label>Activate GoogleTagManager?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <id translate="label">
+                            <label>GoogleTagManager ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </id>
+                        <pageinfo_active>
+                            <label>Activate Page Info Layer?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </pageinfo_active>
+                        <visitorinfo_active>
+                            <label>Activate Visitor Info Layer?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </visitorinfo_active>
+                    </fields>
+                </general>
+                <conversion>
+                    <label>Google Conversion Tracking</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>2</sort_order>
+                    <fields>
+                        <active>
+                            <label>Activate Conversion Info Layer on checkout?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <path>
+                            <label>Checkout URL path</label>
+                            <comment><![CDATA[Default: checkout/onepage/index.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </path>
+                    </fields>
+                </conversion>
+                <ecommerce>
+                    <label>Google eCommerce Tracking</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>3</sort_order>
+                    <fields>
+                        <active>
+                            <label>Activate Transactional Info Layer?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <path>
+                            <label>Success page URL path</label>
+                            <comment><![CDATA[Default: checkout/onepage/success]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </path>
+                    </fields>
+                </ecommerce>
+            </groups>
+        </kirchbergerknorr_googletagmanager>
+    </sections>
+</config>

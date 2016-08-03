@@ -1,0 +1,40 @@
+<?php
+/**
+ * Adds the tag manager code to the specified pages
+ *
+ * @category    Kirchbergerknorr
+ * @package     Kirchbergerknorr_GoogleTagManager
+ * @author      Benedikt Volkmer <bv@kirchbergerknorr.de>
+ * @copyright   Copyright (c) 2016 kirchbergerknorr GmbH (http://www.kirchbergerknorr.de)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/** @var $this Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager */
+?>
+<!-- Kirchbergerknorr Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=<?php echo $this->getGoogleTagManagerId();?>"
+                  height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+
+<script>
+    var dataLayer = [<?php echo json_encode($this->getDataLayerContent()); ?>];
+
+    // set js defined variables
+    dataLayer[0].pageTitle = document.title;
+    dataLayer[0].pageUrl = document.location.href;
+    dataLayer[0].hostName = document.location.hostname;
+    dataLayer[0].referrer = document.referrer;
+    dataLayer[0].urlPath = document.location.pathname;
+
+    (function (w,d,s,l,i) {
+        w[l] = w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l:'';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','<?php echo $this->getGoogleTagManagerId();?>');
+</script>
+<!-- End Google Tag Manager -->

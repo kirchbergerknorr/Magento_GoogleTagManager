@@ -1,0 +1,3 @@
+app/code/community/Kirchbergerknorr/GoogleTagManager app/code/community/Kirchbergerknorr/GoogleTagManager
+app/design/frontend/base/default/template/kirchbergerknorr/googletagmanager app/design/frontend/base/default/template/kirchbergerknorr/googletagmanager
+app/etc/modules/Kirchbergerknorr_GoogleTagManager.xml app/etc/modules/Kirchbergerknorr_GoogleTagManager.xml
