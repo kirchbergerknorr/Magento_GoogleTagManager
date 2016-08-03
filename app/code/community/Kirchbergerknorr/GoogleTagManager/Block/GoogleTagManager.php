@@ -10,7 +10,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core_Block_Template
+class Kirchbergerknorr_GoogleTagManager_Block_GoogleTagManager extends Mage_Core_Block_Template
 {
     /**
      * Helper for fetching the config from backend

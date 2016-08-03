@@ -17,7 +17,7 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
      *
      * @var string
      */
-    const XMLPATH_TAGMANAGER_ENABLED = 'kirchbergerknorr_googletagmanager/general/active';
+    const XMLPATH_GOOGLETAGMANAGER_ENABLED = 'kirchbergerknorr_googletagmanager/general/active';
 
     /**
      * XML path to google id in core config data
@@ -25,7 +25,7 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
      *
      * @var string
      */
-    const XMLPATH_TAGMANAGER_ID = 'kirchbergerknorr_googletagmanager/general/id';
+    const XMLPATH_GOOGLETAGMANAGER_ID = 'kirchbergerknorr_googletagmanager/general/id';
 
     /**
      * XML path to google id in core config data
@@ -84,7 +84,7 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
      */
     public function getGoogleTagManagerIsActive($storeId = null)
     {
-        return Mage::getStoreConfig(self::XMLPATH_TAGMANAGER_ENABLED, $storeId);
+        return Mage::getStoreConfig(self::XMLPATH_GOOGLETAGMANAGER_ENABLED, $storeId);
     }
 
     /**
@@ -96,7 +96,7 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
      */
     public function getGoogleTagManagerId($storeId = null)
     {
-        return Mage::getStoreConfig(self::XMLPATH_TAGMANAGER_ID, $storeId);
+        return Mage::getStoreConfig(self::XMLPATH_GOOGLETAGMANAGER_ID, $storeId);
     }
 
     /**

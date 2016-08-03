@@ -12,7 +12,7 @@
 class Kirchbergerknorr_GoogleTagManager_Model_Observer
 {
     /* GoogleTagManager layout update snippet */
-    const TAGMANAGER_LAYOUT_UPDATE = '
+    const GOOGLETAGMANAGER_LAYOUT_UPDATE = '
         <reference name="after_body_start">
             <block type="kirchbergerknorr_googletagmanager/googletagmanager" name="kk_googletagmanager" as="kk_googletagmanager" template="kirchbergerknorr/googletagmanager/googletagmanager.phtml" />
         </reference>';
@@ -33,7 +33,6 @@ class Kirchbergerknorr_GoogleTagManager_Model_Observer
 
     public function updateLayout(Varien_Event_Observer $observer)
     {
-        // bugfix GD-274 Duplicated orders
         if(Mage::app()->getRequest()->isPost()){
             return $this;
         }
@@ -47,9 +46,9 @@ class Kirchbergerknorr_GoogleTagManager_Model_Observer
             $this->_layout = $observer->getEvent()->getLayout();
 
             // Get layout update
-            $this->_layoutUpdate = $this->_layout->getUpdate()->load();
+            $this->_layoutUpdate = $this->_layout->getUpdate();
 
-            $this->_addLayoutUpdate(self::TAGMANAGER_LAYOUT_UPDATE);
+            $this->_addLayoutUpdate(self::GOOGLETAGMANAGER_LAYOUT_UPDATE);
         }
 
         return $this;
