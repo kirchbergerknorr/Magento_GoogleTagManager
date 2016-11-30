@@ -207,11 +207,9 @@ class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core
         }
 
         if ($quote = Mage::getSingleton('checkout/cart')->getQuote()) {
-            $totals = $quote->getTotals();
             return array(
                 'Nettowarenwert' => $quote->getSubtotal(),
-                'Bruttowarenwert' => $totals['subtotal']->getValue() //Get subtotal from totals because it is grandtotal
-                                                                     // without shipping
+                'Bruttowarenwert' => $quote->getGrandTotal() - $quote->getShippingAddress()->getShippingInclTax()
             );
         }
 
