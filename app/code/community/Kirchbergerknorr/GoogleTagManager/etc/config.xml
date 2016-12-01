@@ -13,7 +13,7 @@
 <config>
     <modules>
         <Kirchbergerknorr_GoogleTagManager>
-            <version>0.1.1</version>
+            <version>0.1.2</version>
         </Kirchbergerknorr_GoogleTagManager>
     </modules>
     <frontend>
@@ -74,9 +74,11 @@
         <kirchbergerknorr_googletagmanager>
             <conversion>
                 <path>checkout/onepage/index</path>
+                <event>orderInitialized</event>
             </conversion>
             <ecommerce>
                 <path>checkout/onepage/success</path>
+                <event>orderComplete</event>
             </ecommerce>
         </kirchbergerknorr_googletagmanager>
     </default>

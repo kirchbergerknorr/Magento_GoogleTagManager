@@ -96,6 +96,15 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </path>
+                        <event>
+                            <label>Event</label>
+                            <comment><![CDATA[Default: orderInitialized.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </event>
                     </fields>
                 </conversion>
                 <ecommerce>
@@ -123,6 +132,16 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </path>
+
+                        <event>
+                            <label>Event</label>
+                            <comment><![CDATA[Default: orderCompleted.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </event>
                     </fields>
                 </ecommerce>
             </groups>

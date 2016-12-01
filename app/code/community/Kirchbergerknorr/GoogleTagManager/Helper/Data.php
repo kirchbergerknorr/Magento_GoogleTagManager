@@ -60,6 +60,14 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
     const XMLPATH_CONVERSION_PATH= 'kirchbergerknorr_googletagmanager/conversion/path';
 
     /**
+     * XML path to conversion event
+     * kirchbergerknorr_googletagmanager/conversion/event
+     *
+     * @var string
+     */
+    const XMLPATH_CONVERSION_EVENT= 'kirchbergerknorr_googletagmanager/conversion/event';
+
+    /**
      * XML path to google id in core config data
      * kirchbergerknorr_googletagmanager/general/transactional_active
      *
@@ -74,6 +82,15 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
      * @var string
      */
     const XMLPATH_ECOMMERCE_PATH= 'kirchbergerknorr_googletagmanager/ecommerce/path';
+
+
+    /**
+     * XML path to ecommerce event
+     * kirchbergerknorr_googletagmanager/ecommerce/event
+     *
+     * @var string
+     */
+    const XMLPATH_ECOMMERCE_EVENT= 'kirchbergerknorr_googletagmanager/ecommerce/event';
 
     /**
      * Returns if googletagmanager is active from configuration
@@ -169,5 +186,30 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
     public function getEcommerceUrlPath($storeId = null)
     {
         return Mage::getStoreConfig(self::XMLPATH_ECOMMERCE_PATH, $storeId);
+    }
+
+    /**
+     * Returns event to fire on conversion
+     * path kirchbergerknorr_googletagmanager/conversion/event
+     *
+     * @param integer $storeId
+     * @return mixed
+     */
+    public function getConversionEvent($storeId = null)
+    {
+        return Mage::getStoreConfig(self::XMLPATH_CONVERSION_EVENT, $storeId);
+    }
+
+    /**
+     * Returns event to fire on ecommerce
+     * path kirchbergerknorr_googletagmanager/ecommerce/event
+     *
+     * @param integer $storeId
+     * @return mixed
+     */
+    public function getEcommerceEvent($storeId = null)
+    {
+        return Mage::getStoreConfig(self::XMLPATH_ECOMMERCE_EVENT, $storeId);
+
     }
 }

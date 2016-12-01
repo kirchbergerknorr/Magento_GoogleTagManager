@@ -54,7 +54,7 @@ class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core
     {
         //If googletagmanager isn't active, return emtpy array for json encode
         if (!$this->_configHelper->getGoogleTagManagerIsActive()) {
-           return array();
+            return array();
         }
 
         return array_merge($this->_getPageInfo(), $this->_getVisitorInfo(),
@@ -188,6 +188,8 @@ class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core
                 }
             }
 
+            $data['event'] = $this->_configHelper->getEcommerceEvent();
+
             $data['transactionProducts'] = $products;
         }
 
@@ -209,7 +211,8 @@ class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core
         if ($quote = Mage::getSingleton('checkout/cart')->getQuote()) {
             return array(
                 'Nettowarenwert' => $quote->getSubtotal(),
-                'Bruttowarenwert' => $quote->getGrandTotal() - $quote->getShippingAddress()->getShippingInclTax()
+                'Bruttowarenwert' => $quote->getGrandTotal() - $quote->getShippingAddress()->getShippingInclTax(),
+                'event' => $this->_configHelper->getConversionEvent()
             );
         }
 
