@@ -19,14 +19,15 @@
 </noscript>
 
 <script>
-    var dataLayer = [<?php echo json_encode($this->getDataLayerContent()); ?>];
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(<?php echo json_encode($this->getDataLayerContent()); ?>);
 
     // set js defined variables
-    dataLayer[0].pageTitle = document.title;
-    dataLayer[0].pageUrl = document.location.href;
-    dataLayer[0].hostName = document.location.hostname;
-    dataLayer[0].referrer = document.referrer;
-    dataLayer[0].urlPath = document.location.pathname;
+    window.dataLayer[0].pageTitle = document.title;
+    window.dataLayer[0].pageUrl = document.location.href;
+    window.dataLayer[0].hostName = document.location.hostname;
+    window.dataLayer[0].referrer = document.referrer;
+    window.dataLayer[0].urlPath = document.location.pathname;
 
     (function (w,d,s,l,i) {
         w[l] = w[l]||[];

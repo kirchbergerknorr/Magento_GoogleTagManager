@@ -154,15 +154,15 @@ class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core
         if ($order) {
             // Get general transaction details
             $data = array(
-                'transId' => $order->getIncrementId(),
-                'transDate' => date('Y-m-d'),
-                'transTotal' => round($order->getBaseGrandTotal(), 2),
-                'transTax' => round($order->getBaseTaxAmount(), 2),
-                'transShipping' => round($order->getBaseShippingAmount(), 2),
-                'transPaymentType' => $order->getPayment()->getMethodInstance()->getTitle(),
-                'transCurrency' => Mage::app()->getStore()->getBaseCurrencyCode(),
-                'transShippingMethod' => $order->getShippingCarrier() ? $order->getShippingCarrier()->getCarrierCode() : 'No Shipping',
-                'transProducts' => array(),
+                'transactionId' => $order->getIncrementId(),
+                'transactionDate' => date('Y-m-d'),
+                'transactionTotal' => round($order->getBaseGrandTotal(), 2),
+                'transactionTax' => round($order->getBaseTaxAmount(), 2),
+                'transactionShipping' => round($order->getBaseShippingAmount(), 2),
+                'transactionPaymentType' => $order->getPayment()->getMethodInstance()->getTitle(),
+                'transactionCurrency' => Mage::app()->getStore()->getBaseCurrencyCode(),
+                'transactionShippingMethod' => $order->getShippingCarrier() ? $order->getShippingCarrier()->getCarrierCode() : 'No Shipping',
+                'transactionProducts' => array(),
             );
 
             foreach ($order->getAllVisibleItems() as $orderItem) {
