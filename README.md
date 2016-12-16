@@ -62,14 +62,14 @@ With this module it is also possible to add eCommerce tracking information to th
 
 #### Activate Transactional Info Layer?
 If this option is active, transactional information will be added to the data layer. Following variables are added:
-* transId
-* transDate
-* transTotal
-* transShipping
-* transPaymentType
-* transCurrency
-* transShippingMethod
-* transProducts (per cart item)
+* transactionId
+* transactionDate
+* transactionTotal
+* transactionShipping
+* transactionPaymentType
+* transactionCurrency
+* transactionShippingMethod
+* transactionProducts (per cart item)
   * id
   * name
   * sku
