@@ -131,6 +131,8 @@ class Kirchbergerknorr_GoogleTagManager_Block_Googletagmanager extends Mage_Core
         if (!$this->_configHelper->getVisitorInfoIsActive()) {
             return array();
         }
+
+        return array();
     }
 
     /**

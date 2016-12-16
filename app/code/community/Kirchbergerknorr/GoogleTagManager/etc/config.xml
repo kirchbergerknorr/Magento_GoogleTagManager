@@ -13,7 +13,7 @@
 <config>
     <modules>
         <Kirchbergerknorr_GoogleTagManager>
-            <version>0.1.3</version>
+            <version>0.1.5</version>
         </Kirchbergerknorr_GoogleTagManager>
     </modules>
     <frontend>
