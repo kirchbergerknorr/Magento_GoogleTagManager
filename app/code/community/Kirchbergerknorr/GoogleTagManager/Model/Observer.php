@@ -43,7 +43,7 @@ class Kirchbergerknorr_GoogleTagManager_Model_Observer
 
         if ($configHelper->getGoogleTagManagerIsActive()) {
 
-            $this->layoutUpdateSnippet =
+            $layoutUpdateSnippet =
                 '<reference name="' . $configHelper->getGoogleTagManagerHtmlPosition() . '">
                     <block type="kirchbergerknorr_googletagmanager/googletagmanager" name="kk_googletagmanager" as="kk_googletagmanager" template="kirchbergerknorr/googletagmanager/googletagmanager.phtml" />
                 </reference>';
@@ -54,7 +54,7 @@ class Kirchbergerknorr_GoogleTagManager_Model_Observer
             // Get layout update
             $this->_layoutUpdate = $this->_layout->getUpdate();
 
-            $this->_addLayoutUpdate($this->layoutUpdateSnippet);
+            $this->_addLayoutUpdate($layoutUpdateSnippet);
         }
 
         return $this;
