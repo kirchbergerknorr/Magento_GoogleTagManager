@@ -11,11 +11,12 @@
 
 class Kirchbergerknorr_GoogleTagManager_Model_Observer
 {
-    /* GoogleTagManager layout update snippet */
-    const GOOGLETAGMANAGER_LAYOUT_UPDATE = '
-        <reference name="after_body_start">
-            <block type="kirchbergerknorr_googletagmanager/googletagmanager" name="kk_googletagmanager" as="kk_googletagmanager" template="kirchbergerknorr/googletagmanager/googletagmanager.phtml" />
-        </reference>';
+    /**
+     * Layout update code snippet
+     *
+     * @var string
+     */
+    protected $layoutUpdateSnippet;
 
     /**
      * Contains the current layout object
@@ -42,13 +43,18 @@ class Kirchbergerknorr_GoogleTagManager_Model_Observer
 
         if ($configHelper->getGoogleTagManagerIsActive()) {
 
+            $this->layoutUpdateSnippet =
+                '<reference name="' . $configHelper->getGoogleTagManagerHtmlPosition() . '">
+                    <block type="kirchbergerknorr_googletagmanager/googletagmanager" name="kk_googletagmanager" as="kk_googletagmanager" template="kirchbergerknorr/googletagmanager/googletagmanager.phtml" />
+                </reference>';
+
             // Get current layout
             $this->_layout = $observer->getEvent()->getLayout();
 
             // Get layout update
             $this->_layoutUpdate = $this->_layout->getUpdate();
 
-            $this->_addLayoutUpdate(self::GOOGLETAGMANAGER_LAYOUT_UPDATE);
+            $this->_addLayoutUpdate($this->layoutUpdateSnippet);
         }
 
         return $this;

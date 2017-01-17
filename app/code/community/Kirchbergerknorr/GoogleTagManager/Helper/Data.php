@@ -93,6 +93,11 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
     const XMLPATH_ECOMMERCE_EVENT= 'kirchbergerknorr_googletagmanager/ecommerce/event';
 
     /**
+     * XML path to the HTML position configuration
+     */
+    const XMLPATH_HTML_POSITION = 'kirchbergerknorr_googletagmanager/general/html_position';
+
+    /**
      * Returns if googletagmanager is active from configuration
      * path kirchbergerknorr_googletagmanager/general/active
      *
@@ -211,5 +216,17 @@ class Kirchbergerknorr_GoogleTagManager_Helper_Data extends Mage_Core_Helper_Abs
     {
         return Mage::getStoreConfig(self::XMLPATH_ECOMMERCE_EVENT, $storeId);
 
+    }
+
+    /**
+     * Get HTML position of the Google Tag Manager code
+     *
+     * @param int $storeId
+     *
+     * @return mixed
+     */
+    public function getGoogleTagManagerHtmlPosition($storeId = null)
+    {
+        return Mage::getStoreConfig(self::XMLPATH_HTML_POSITION, $storeId);
     }
 }

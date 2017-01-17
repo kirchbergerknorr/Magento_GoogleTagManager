@@ -72,6 +72,9 @@
     </global>
     <default>
         <kirchbergerknorr_googletagmanager>
+            <general>
+                <html_position>after_body_start</html_position>
+            </general>
             <conversion>
                 <path>checkout/onepage/index</path>
                 <event>orderInitialized</event>
